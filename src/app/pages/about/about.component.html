@@ -1,8 +1,12 @@
 <div class="ae-grid au-xs-ta-center au-mb-12">
-  <div class="animated fadeIn ae-grid__item item-lg-12 ae-kappa au-mb-12"><img src="assets/img/team-1.jpg" alt="" class="au-mb-3">
-    <h5 class="ae-u-bolder au-mt-2">Noelia Muñoz</h5>
-    <p class="ae-u-bolder au-mb-3">Junior Developer</p>
-    <p class="au-lg-ta-center ae-eta au-pl-12 au-pr-12">Ingeniera de Caminos Convert.ToDeveloper</p><a href="#0" class="ae-u-bolder au-underline">@noeliamunoz</a>
+  <div *ngFor="let persona of infoService.about"    class="animated fadeIn ae-grid__item item-lg-12 ae-kappa au-mb-12">
+    <img [src] ="persona.foto" alt="" class="au-mb-3">
+    <h5 class="ae-u-bolder au-mt-2">{{ persona.nombre}}</h5>
+    <p class="ae-u-bolder au-mb-3">{{ persona.subtitulo}}</p>
+    <p class="au-lg-ta-center ae-eta au-pl-12 au-pr-12">{{ persona.titulo}}</p>
+    <p class="au-mt-1" >{{ persona.descripcion}}</p>
+
+    <a href="#0" class="ae-u-bolder au-underline">{{ persona.curriculum}}</a>
   </div>
 
 </div>

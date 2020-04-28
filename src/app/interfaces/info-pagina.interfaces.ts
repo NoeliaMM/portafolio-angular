@@ -8,5 +8,5 @@ export interface InfoPagina {
   facebook?: string;
   twitter?: string;
   github?: string;
-  equipo?: any[];
+  about?: any[];
 }
