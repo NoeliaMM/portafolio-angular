@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PuenteInfo } from '../interfaces/puente-interface';
+import { PuenteInfo } from '../interfaces/puente.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,11 @@ export class PuentesService {
       //   this.cargando=false;
       // },2000);
     });
+  }
+
+  getPuenteById(id: string){
+
+    return this.http.get(`https://angularpuentes.firebaseio.com/puentes/${id}.json`);
+    
   }
 }
