@@ -33,7 +33,7 @@ export class InfoPaginaService {
    private cargarAbout(){
      this.http.get('https://angularpuentes.firebaseio.com/about.json')
      .subscribe((resp: any[]) => {
-       this.about = resp;     
+       this.about = resp;
      });
    }
 }

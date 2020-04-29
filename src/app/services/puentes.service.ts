@@ -23,9 +23,9 @@ export class PuentesService {
 
     return new Promise((resolve, reject) => {
       this.http.get('https://angularpuentes.firebaseio.com/puentes_idx.json')
-      .subscribe((resp: PuenteInfo[]) => {
-        this.cargando = false;
+      .subscribe((resp: PuenteInfo[]) => {       
         this.puentes = resp;
+        this.cargando = false;
         resolve();
     });
    
@@ -63,13 +63,14 @@ export class PuentesService {
   }
 
   private filtrarPuentes(termino: string){
-      console.log(this.puentes);
+
       this.puentesFiltrado = [];
+
       termino = termino.toLocaleLowerCase();
 
       this.puentes.forEach( puen => {
-        const tituloLower = puen.nombre.toLowerCase();
-        const tipoLower = puen.tipo.toLowerCase();
+        const tituloLower = puen.nombre.toLocaleLowerCase();
+        const tipoLower = puen.tipo.toLocaleLowerCase();
 
         if ( tituloLower.indexOf(termino) >= 0 || tipoLower.indexOf(termino) >= 0) {
           this.puentesFiltrado.push(puen);
