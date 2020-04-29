@@ -8,6 +8,6 @@ import { PuentesService } from './services/puentes.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public InfoPaginaService : InfoPaginaService, 
-              public PuentesService : PuentesService){}
+  constructor(public infoPaginaService : InfoPaginaService, 
+              public puentesService : PuentesService){}
 }
